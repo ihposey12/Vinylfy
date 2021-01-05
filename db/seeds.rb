@@ -5,6 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+UserRecord.destroy_all
+User.destroy_all
+Genre.destroy_all
+Record.destroy_all
+Review.destroy_all
 
 u1 = User.create(name: 'Juan', username: 'JC', password: 'ilovenicksaban12')
 u2 = User.create(name: 'Jeremy', username: 'JR', password: 'ilovenicksaban13')
@@ -28,4 +33,12 @@ rr1 = Review.create(description: 'The Rolling Stones 10th studio album, released
 rr2 = Review.create(description: 'The Grateful Deads 2 studio album.', rating: 5, record_id: r2.id, user_id: u2.id)
 rr3 = Review.create(description: 'Waylon Jennings released this with the help of Johnny Cash and Merle Haggard', rating: 3, record_id: r3.id, user_id: u3.id)
 
+ur1 = UserRecord.create(user_id: u1.id, record_id: r1.id)
+ur2 = UserRecord.create(user_id: u2.id, record_id: r2.id)
+ur3 = UserRecord.create(user_id: u3.id, record_id: r3.id)
+
 puts 'Seeds Loaded'
+
+#MUST migrate new column to Records AND Reviews.
+#Record get a description:text
+#Review gets a title:string

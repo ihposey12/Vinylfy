@@ -1,5 +1,5 @@
 <h2>
-    <%= @user.name %>
+    Welcome, <%= @user.name %>!
 </h2>
 
 <h3>
@@ -7,5 +7,5 @@
 </h3>
 
 <h3>
-    <%= @user.records %>
+    <%= link_to @records.first.title, @records.first %>
 </h3>
