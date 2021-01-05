@@ -3,9 +3,21 @@
 </h2>
 
 <h3>
-    <%= @user.username %>
+    Username: <%= @user.username %>
 </h3>
 
 <h3>
-    <%= link_to @records.first.title, @records.first %>
+    Your Records: 
+    <ul>
+        <li><%= link_to @records.first.title, @records.first %></li><br>
+    </ul>
+</h3>
+
+<h3>
+    Favorite Genres: 
+    <ul>
+        <% @genres.each do |g| %>
+            <li><%= link_to g.name, g %></li><br>
+        <% end %>    
+    </ul>
 </h3>
