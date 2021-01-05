@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  band: MyString
+  release_date: MyString
+  price: 1.5
+  genre: one
+
+two:
+  title: MyString
+  band: MyString
+  release_date: MyString
+  price: 1.5
+  genre: two
