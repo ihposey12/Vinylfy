@@ -1,49 +1,72 @@
-<% if flash[:errors] %>
-    <% flash[:errors].each do |error| %>
-    <p><%= error %></p>
-    <% end %>
-<% end %>    
-
-<%= form_with model: @review do |f| %>
+<h2>List A Record</h2>
+<%= form_with model: @record do |f| %>
     <%= f.label :title %><br>
     <%= f.text_field :title %><br><br>
 
+    <%= f.label :band %><br>
+    <%= f.text_field :band %><br><br>
+
     <%= f.label :description %><br>
     <%= f.text_area :description %><br><br>
-Rating:
-<br></br>
+
+    <%= f.label :release_date %><br>
+    <%= f.text_field :release_date %><br><br>
+
+    <%= f.label :price %><br>
+    <%= f.number_field :price %><br><br>
+
+    <%= f.collection_select :genre_id, @genres, :id, :name %>
     <div class="form-check">
   <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
   <label class="form-check-label" for="flexCheckDefault">
-    1
+    Rock
   </label>
 </div>
 <div class="form-check">
   <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
   <label class="form-check-label" for="flexCheckChecked">
-    2
+    Pop
   </label>
 </div>
 
 <div class="form-check">
   <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
   <label class="form-check-label" for="flexCheckDefault">
-    3
+    Jam
   </label>
 </div>
 <div class="form-check">
   <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
   <label class="form-check-label" for="flexCheckChecked">
-    4
+    Country
   </label>
 </div>
 
 <div class="form-check">
   <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
   <label class="form-check-label" for="flexCheckDefault">
-    5
+    R&B
   </label>
 </div>
-<br>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+  <label class="form-check-label" for="flexCheckChecked">
+    Soul
+  </label>
+</div>
+
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <label class="form-check-label" for="flexCheckDefault">
+    Rap
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+  <label class="form-check-label" for="flexCheckChecked">
+    Blues
+  </label>
+</div>
+
     <%= f.submit %>
 <% end %>

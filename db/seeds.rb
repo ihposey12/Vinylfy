@@ -39,6 +39,10 @@ ur3 = UserRecord.create(user_id: u3.id, record_id: r3.id)
 
 puts 'Seeds Loaded'
 
-#MUST migrate new column to Records AND Reviews.
-#Record get a description:text
-#Review gets a title:string
+#fix user#post route error on list record button.
+#fix price floats
+#fix validations for rating if needed.
+#check other validations for fixes
+#check/correct routes
+#maybe fix rating?(connect)
+#fix genres(connect)

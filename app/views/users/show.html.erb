@@ -9,8 +9,16 @@
 <h3>
     Your Records: 
     <ul>
-        <li><%= link_to @records.first.title, @records.first %></li><br>
+        <% if @records.all.count == 0 %>
+            <%= 'Sorry, you do not have any records listed.' %>
+        <% else %>
+            <li><%= link_to @records.first.title, @records.first %></li><br>
+        <% end %>
     </ul>
+
+    <%= 'List A Record?' %>
+    <%= link_to 'List Record', new_record_path %>
+
 </h3>
 
 <h3>

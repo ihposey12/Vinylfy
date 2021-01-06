@@ -9,6 +9,7 @@ class RecordsController < ApplicationController
 
     def new
         @record = Record.new
+        @genres = Genre.all
     end
 
     def create
