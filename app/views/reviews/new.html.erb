@@ -1,0 +1,24 @@
+<% if flash[:errors] %>
+    <% flash[:errors].each do |error| %>
+    <p><%= error %></p>
+    <% end %>
+<% end %>    
+
+<%= form_with model: @review do |f| %>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %><br><br>
+
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+
+<p>
+    <b>Rating</b><br><br>
+    <%= f.radio_button :rating, '1' %> 1
+    <%= f.radio_button :rating, '2' %> 2
+    <%= f.radio_button :rating, '3' %> 3
+    <%= f.radio_button :rating, '4' %> 4
+    <%= f.radio_button :rating, '5' %> 5
+</p><br>
+
+    <%= f.submit %>
+<% end %>

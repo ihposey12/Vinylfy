@@ -12,26 +12,36 @@ class RecordsController < ApplicationController
     end
 
     def create
-
+        @record = Record.create(record_params)
+        if @record.valid?
+            redirect_to @record
+        else
+            flash[:errors] = @record.errors.full_messages
+            redirect_to new_record_path
+        end
     end
 
     def edit
-
+        @record = Record.find(params[:id])
     end
 
     def update
-
+        @record = Record.find(params[:id])
+        @record.update(record_params)
+        redirect_to record_path(@record)
     end
 
     def destroy
-
+        @record = Record.find(params[:id])
+        @record.destroy
+        redirect_to record_path
     end
 
     def add_to_cart
         @record = Record.find(params[:id])
-        @cart = session[:cart] || []
-        @cart << @record
-        session[:cart] ||= @cart
+        cart = session[:cart] || []
+        cart << @record.id
+        session[:cart] ||= cart
         redirect_to current_cart_path
     end
 
@@ -39,9 +49,14 @@ class RecordsController < ApplicationController
         session[:cart] ||= @cart
     end
 
+    def leave_review
+        @record = Record.find(params[:id])
+        redirect_to new_review_path
+    end
+
     private
 
     def record_params
-        params.require(:record).permit(:title, :band, :release_date, :price, :genre_id)
+        params.require(:record).permit(:title, :description, :band, :release_date, :price, :genre_id)
     end
 end
