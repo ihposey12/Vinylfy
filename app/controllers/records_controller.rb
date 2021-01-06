@@ -40,9 +40,8 @@ class RecordsController < ApplicationController
 
     def add_to_cart
         @record = Record.find(params[:id])
-        cart = session[:cart] || []
-        cart << @record.id
-        session[:cart] ||= cart
+        @cart = session[:cart] || []
+        @cart << @record.id
         redirect_to current_cart_path
     end
 
@@ -58,6 +57,6 @@ class RecordsController < ApplicationController
     private
 
     def record_params
-        params.require(:record).permit(:title, :description, :band, :release_date, :price, :genre_id)
+        params.require(:record).permit(:title, :description, :band, :release_date, :price, :genre_id, :user_ids)
     end
 end

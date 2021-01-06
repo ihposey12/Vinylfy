@@ -15,6 +15,6 @@
 </h3>
 
 <%= button_to 'Add to Cart', action: 'add_to_cart', method: 'patch' %><br>
-<%= button_to 'Leave A Review', action: 'leave_review', method: 'post' %><br>
+<%= button_to 'Leave A Review', new_review_path, method: 'get', params: {record_id: @record.id} %><br>
 <%#= button_to 'Purchase', switch_users_path, method: 'patch' %>
 <%#= button_to 'Request Trade', action: '/request_trade', method: 'patch' %>

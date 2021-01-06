@@ -6,6 +6,7 @@ class ReviewsController < ApplicationController
     def new
         @review = Review.new
         @reviews = Review.all
+        @record = Record.find(params[:record_id])
     end
 
     def create

@@ -12,21 +12,19 @@
   </head>
 
   <body>
-    <% if @logged_in %>
-      <%= link_to 'Log out', log_out_path, :method => :delete %>
-        <h1>Hi, <%= @user.username %>!</h1>
-      <% else %>
-        <%= link_to 'Log in', new_log_in_path %>
-        <%= link_to 'Sign up', new_user_path %>
-      <% end %>
-
-  <br>
-
       <% if flash[:errors] %>
         <% flash[:errors].each do |error| %>
           <%= error %>
         <% end %>
-      <% end %>  
+      <% end %>
+
+      <% if @logged_in %>
+      <%= button_to 'Log out', log_out_path, :method => :delete %>
+        <h1>Hi, <%= @user.username %>!</h1>
+      <% else %>
+        <%= link_to 'Log in', new_log_in_path %>
+        Dont have an Account? <%= link_to 'Sign up', new_user_path %>!
+      <% end %>
 
     <%= yield %>
   </body>

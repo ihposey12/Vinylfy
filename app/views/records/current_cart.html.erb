@@ -1,5 +1,5 @@
 <h2>
-    <%= @cart %>
-        <%#= c.id %>
-    <%# end %>    
+    <% @cart.each do |c| %>
+        <%= c.title %>
+    <% end %>    
 </h2>
