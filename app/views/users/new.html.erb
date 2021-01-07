@@ -1,5 +1,5 @@
-<h2>Welcome to Vinyl·Fi!<br>
-Please Create an Account!
+<h2><strong>Welcome to Vinyl·Fi!</strong><br><br>
+<h5>Please Create an Account Below: </h5><br>
 </h2>
 <%= form_with model: @user do |f| %>
     <%= f.label :name %><br>
@@ -9,7 +9,7 @@ Please Create an Account!
     <%= f.text_field :username, placeholder: "Username" %><br><br>
 
     <%= f.label :password %><br>
-    <%= f.password_field :password, placeholder: 'Password' %><br><br>
+    <%= f.password_field :password, placeholder: 'Password' %><br><br><br>
 <div>
     <%= f.collection_check_boxes :genre_ids, @genres, :id, :name %><br>
 </div>

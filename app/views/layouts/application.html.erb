@@ -19,7 +19,16 @@
         <% end %>
       <% end %>
 
-      <p> <%= link_to 'Home', @user %> | <%= link_to 'Shop', static_show_path %> | <%= link_to 'About', root_path %> </p>
+      <u><h1><strong>Vinyl·Fi</strong></h1></u>
+
+      <%= link_to 'Main', @user %><strong> ·</strong>
+      <%= link_to 'Shop', static_show_path %><strong> ·</strong>
+      <%= link_to 'Reviews', @review %><strong> ·</strong>
+      <%= link_to 'About', root_path %> <strong> ·</strong>
+
+  <br>
+  <br>
+  <br>
 
     <%= yield %>
     
@@ -27,7 +36,8 @@
     <% if @logged_in %>
       <%= button_to 'Log out', log_out_path, :method => :delete %>
       <% else %>
-        Have an account? <%= button_to 'Log in', new_log_in_path %>
+        <%= link_to 'Log in', new_log_in_path %>
+        Dont have an Account? <%= link_to 'Sign up', new_user_path %>!
     <% end %>
 
   </body>
