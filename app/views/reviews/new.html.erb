@@ -4,6 +4,11 @@
     <% end %>
 <% end %>    
 
+<h2>Write Your Review Here!</h2>
+<p>* Your Toxicity isn't Welcome Here *</p>
+
+<br>
+
 <%= form_with model: @review do |f| %>
     <%= f.label :title %><br>
     <%= f.text_field :title %><br><br>
@@ -11,43 +16,10 @@
     <%= f.label :description %><br>
     <%= f.text_area :description %><br><br>
 
-    <%= f.hidden_field :record_id, :value => @record.id %>
-    <%= f.number_field :rating, min: 1, max: 5 %>
+    Rating: <%= f.hidden_field :record_id, :value => @record.id %>
+    <%= f.number_field :rating, min: 1, max: 5 %><br><br>
 
-Rating:
-
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-      <label class="form-check-label" for="flexCheckDefault">
-        1
-      </label>
-    </div>
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-      <label class="form-check-label" for="flexCheckChecked">
-        2
-      </label>
-    </div>
-
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-      <label class="form-check-label" for="flexCheckDefault">
-        3
-      </label>
-    </div>
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-      <label class="form-check-label" for="flexCheckChecked">
-       4
-      </label>
-    </div>
-
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-      <label class="form-check-label" for="flexCheckDefault">
-        5
-      </label>
-    </div>
 <br>
+
     <%= f.submit %>
 <% end %>

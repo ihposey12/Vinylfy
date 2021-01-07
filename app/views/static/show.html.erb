@@ -1,5 +1,10 @@
 <ol>
-<% Record.all.map do |r| %>
-    <li><%= link_to r.title, r %></li>
-<% end %>
+    <% Record.all.map do |r| %>
+        <li>
+            <h4><%= link_to r.title, r %><br></h3>
+            <em>Band/Artist: </em><strong><%= r.band %></strong><br>
+            <em>Price: </em><strong>$<%= r.price.round %>.00</strong><br>
+            <em>Genre: </em><strong><%= r.genre.name %></strong><br>
+        </li><br>
+    <% end %>
 </ol>

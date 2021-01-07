@@ -40,10 +40,13 @@ ur3 = UserRecord.create(user_id: u3.id, record_id: r3.id)
 
 puts 'Seeds Loaded'
 
-#fix user#post route error on list record button.
-#fix price floats
-#fix validations for rating if needed.
-#check other validations for fixes
-#check/correct routes
-#maybe fix rating?(connect)
-#fix genres(connect)
+#add link to review titles in reviews index
+#fix reviews menu button redirection
+#fix list a record
+#fix/make checkout redirection
+#research striper faker for checkout
+#record band and record price to current cart and total
+#***20 Methods***
+#clean up models/controllers
+#add models/controllers if needed(possibly cart model)
+#style
