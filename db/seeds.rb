@@ -50,3 +50,10 @@ puts 'Seeds Loaded'
 #clean up models/controllers
 #add models/controllers if needed(possibly cart model)
 #style
+
+
+#dont touch this
+#<%= link_to 'Main', @user %><strong> ·</strong>
+#<%= link_to 'Shop', static_show_path %><strong> ·</strong>
+#<%= link_to 'Reviews', @review %><strong> ·</strong>
+#<%= link_to 'About', root_path %> <strong> ·</strong>
