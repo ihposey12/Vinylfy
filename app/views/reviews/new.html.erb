@@ -1,0 +1,25 @@
+<% if flash[:errors] %>
+    <% flash[:errors].each do |error| %>
+    <p><%= error %></p>
+    <% end %>
+<% end %>    
+
+<h2>Write Your Review Here!</h2>
+<p>* Your Toxicity isn't Welcome Here *</p>
+
+<br>
+
+<%= form_with model: @review do |f| %>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %><br><br>
+
+    <%= f.label :description %><br>
+    <%= f.text_area :description %><br><br>
+
+    Rating: <%= f.hidden_field :record_id, :value => @record.id %>
+    <%= f.number_field :rating, min: 1, max: 5 %><br><br>
+
+<br>
+
+    <%= f.submit %>
+<% end %>

@@ -1,0 +1,22 @@
+<h2>List A Record</h2>
+<%= form_with model: @record do |f| %>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %><br><br>
+
+    <%= f.label :band %><br>
+    <%= f.text_field :band %><br><br>
+
+    <%= f.label :description %><br>
+    <%= f.text_area :description %><br><br>
+
+    <%= f.label :release_date %><br>
+    <%= f.text_field :release_date %><br><br>
+
+    <%= f.label :price %><br>
+    <%= f.number_field :price %><br><br>
+
+    <%= f.collection_select :genre_id, @genres, :id, :name %>
+    <%= f.hidden_field :user_id, :value => session[:user_id] %>
+
+    <%= f.submit %>
+<% end %>

@@ -1,0 +1,16 @@
+<div>
+    <h2>Welcome to Vinylfy!</h2>
+    <img>
+</div>
+
+<div>
+    <%= form_for :log_in, url: log_in_index_path do |f| %>
+        <%= f.label :username %><br>
+        <%= f.text_field :username%><br><br>
+
+        <%= f.label :password %><br>
+        <%= f.password_field :password %><br><br>
+
+        <%= f.submit "Login" %><br>
+    <% end %>
+</div>

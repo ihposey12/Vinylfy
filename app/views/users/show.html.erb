@@ -1,15 +1,38 @@
-<h2>
-    Welcome, <%= @user.name %>!
-</h2>
-
 <h3>
-    <%= @user.username %>
+    Welcome, <%= @user.name %>!
 </h3>
 
+<h5>
+    Username: <%= @user.username %>
+</h5><br><br>
+
+    <h3>Your Records: </h3><br>
+    <ul>
+        <% if @records.all.count == 0 %>
+            <h5><%= 'Dang! No records listed...yet!' %></h5>
+        <% else %>
+            <li><%= link_to @records.first.title, @records.first %></li><br>
+        <% end %>
+    </ul>
+<br>
+<br>
+    <h3>List a Record <%= link_to 'Here!', new_record_path %></h3>
+<br>
+<br>
 <h3>
+<<<<<<< HEAD
 <<<<<<< HEAD
     <%= link_to @records.first.title, @records.first %>
 =======
     <%= @records.first %>
 >>>>>>> fixed webpacker
 </h3>
+=======
+    My Favorite Genres: 
+    <ul>
+        <% @genres.each do |g| %>
+            <li><%= link_to g.name, g %></li><br>
+        <% end %>
+    </ul>
+</h3><br>
+>>>>>>> hunter-p

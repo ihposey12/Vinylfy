@@ -1,16 +1,43 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Vinylfy</title>
+    <title>Vinyl·Fi</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <%#= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+  <br>
+      <% if flash[:errors] %>
+        <% flash[:errors].each do |error| %>
+          <%= error %>
+        <% end %>
+      <% end %>
+
+      <u><h1><strong>Vinyl·Fi</strong></h1></u>
+
+      <%= link_to 'Main', @user %><strong> ·</strong>
+      <%= link_to 'Shop', static_show_path %><strong> ·</strong>
+      <%= link_to 'Reviews', @review %><strong> ·</strong>
+      <%= link_to 'About', root_path %> <strong> ·</strong>
+
+  <br>
+  <br>
+  <br>
+
     <%= yield %>
+  <br>
+    <% if @logged_in %>
+      <%= button_to 'Log out', log_out_path, :method => :delete %>
+      <% else %>
+        <%= link_to 'Log in', new_log_in_path %>
+        Dont have an Account? <%= link_to 'Sign up', new_user_path %>!
+    <% end %>
+
   </body>
 </html>

@@ -6,6 +6,10 @@
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    "bootstrap": "^5.0.0-beta1",
+>>>>>>> hunter-p
     "turbolinks": "^5.2.0",
     "webpack": "^5.11.1"
 =======
