@@ -22,6 +22,7 @@
       <p> <%= link_to 'Home', @user %> | <%= link_to 'Shop', static_show_path %> | <%= link_to 'About', root_path %> </p>
 
     <%= yield %>
+    
   <br>
     <% if @logged_in %>
       <%= button_to 'Log out', log_out_path, :method => :delete %>
