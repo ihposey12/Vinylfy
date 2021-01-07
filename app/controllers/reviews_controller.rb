@@ -32,6 +32,6 @@ class ReviewsController < ApplicationController
     private
 
     def review_params
-        params.require(:review).permit(:title, :description, :rating).with_defaults(record_id: session[:record_id], user_id: session[:user_id])
+        params.require(:review).permit(:title, :description, :rating, :record_id).with_defaults(user_id: session[:user_id])
     end
 end

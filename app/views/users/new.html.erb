@@ -8,6 +8,8 @@
 
     <%= f.label :password %><br>
     <%= f.password_field :password %><br><br>
-    
+<div>
+    <%= f.collection_check_boxes :genre_ids, @genres, :id, :name %><br>
+</div>
     <%= f.submit 'Sign Up' %>
 <% end %>

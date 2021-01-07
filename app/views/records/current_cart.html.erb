@@ -1,5 +1,7 @@
-<h2>
-    <% @cart.each do |c| %>
-        <%= c.title %>
+<ul>
+    <% current_cart.each do |c| %>
+        <li><%= link_to c, record_path %></li>
     <% end %>    
-</h2>
+</ul>
+
+<%= link_to 'Checkout' %><br>

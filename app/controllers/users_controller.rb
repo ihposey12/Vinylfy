@@ -3,6 +3,7 @@ skip_before_action :require_login, :only => [:create, :new]
 
     def new
         @user = User.new
+        @genres = Genre.all
     end
 
     def create
@@ -18,7 +19,7 @@ skip_before_action :require_login, :only => [:create, :new]
     def show
         @user = User.find(params[:id])
         @records = @user.records
-        @genres = Genre.all
+        @genres = @user.genres
     end
 
     def edit
@@ -36,6 +37,6 @@ skip_before_action :require_login, :only => [:create, :new]
     private
 
     def user_params
-        params.require(:user).permit(:name, :username, :password)
+        params.require(:user).permit(:name, :username, :password, :genre_ids => [])
     end
 end

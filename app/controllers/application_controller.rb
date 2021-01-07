@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+    helper_method :current_cart
+    
     before_action :fetch_user
     before_action :require_login
     

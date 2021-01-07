@@ -6,7 +6,6 @@ class LogInController < ApplicationController
     end
 
     def create
-        byebug
         @user = User.find_by(username:params[:log_in][:username])
         if @user && @user.authenticate(params[:log_in][:password])
             log_in_user(@user.id)
