@@ -2,11 +2,11 @@
 
 <ul>
     <% current_cart.each do |c| %>
-        <li><h5><%= link_to c, record_path %></h5></li><br>
+        <li><h5><%= link_to c['title'], record_path %>  $<%= c['price'].round %></h5></li><br>
     <% end %>    
 </ul>
 
-<%= link_to 'Checkout' %>
+<%#= button_to 'Checkout', action: 'checkout', method: 'patch' %><br><br>
 
 <br>
 <br>

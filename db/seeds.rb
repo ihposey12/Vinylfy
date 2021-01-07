@@ -27,7 +27,7 @@ soul = Genre.create(name: 'Soul')
 blues = Genre.create(name: 'Blues')
 
 r1 = Record.create(title: 'Exile on Main Street', band: 'Rolling Stones', release_date: '1972', price: 15.00, description: 'Love it', genre_id: rock.id)
-r2 = Record.create(title: 'Axomoxoa', band: 'Grateful Dead', release_date: '1971', price: 20.00, description: 'Heart it', genre_id: jam.id)
+r2 = Record.create(title: 'Axomoxoa', band: 'Grateful Dead', release_date: '1971', price: 20.00, description: 'Heart it', genre_id: rock.id)
 r3 = Record.create(title: 'Highwaymen', band: 'Waylon Jennings', release_date: '1993', price: 17.00, description: 'Hate it', genre_id: country.id)
 
 rr1 = Review.create(title: 'Dumb', description: 'The Rolling Stones 10th studio album, released as a double album.', rating: 4, record_id: r1.id, user_id: u1.id)

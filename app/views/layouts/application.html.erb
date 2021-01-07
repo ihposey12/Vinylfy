@@ -21,9 +21,14 @@
 
       <u><h1><strong>Vinyl·Fi</strong></h1></u>
 
-      <%= link_to 'Main', @user %><strong> ·</strong>
+      <% if @user %>
+        <%= link_to 'Main', @user %><strong> ·</strong>
+        <%#= link_to 'Cart', current_cart_path(@user) %><strong> ·</strong>
+      <% else %>
+        <%= link_to 'Main', new_log_in_path %><strong> ·</strong>
+      <% end %>
       <%= link_to 'Shop', static_show_path %><strong> ·</strong>
-      <%= link_to 'Reviews', @review %><strong> ·</strong>
+      <%= link_to 'Reviews', reviews_path %><strong> ·</strong>
       <%= link_to 'About', root_path %> <strong> ·</strong>
 
   <br>

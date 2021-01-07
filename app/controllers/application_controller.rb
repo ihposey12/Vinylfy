@@ -18,6 +18,7 @@ class ApplicationController < ActionController::Base
     private
     
     def log_in_user(user_id)
+        byebug
         session[:user_id] = user_id
     end
 

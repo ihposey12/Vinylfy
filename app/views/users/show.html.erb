@@ -11,7 +11,9 @@
         <% if @records.all.count == 0 %>
             <h5><%= 'Dang! No records listed...yet!' %></h5>
         <% else %>
-            <li><%= link_to @records.first.title, @records.first %></li><br>
+            <% @records.each do |r| %>
+                <li><%= link_to r.title, r %></li><br>
+            <% end %>
         <% end %>
     </ul>
 <br>
@@ -21,7 +23,7 @@
 <br>
 <h3>
     My Favorite Genres: 
-    <ul>
+    <ul><br>
         <% @genres.each do |g| %>
             <li><%= link_to g.name, g %></li><br>
         <% end %>

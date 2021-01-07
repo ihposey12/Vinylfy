@@ -12,4 +12,12 @@ class User < ApplicationRecord
     validates :name, :username, :password, presence: true
     validates :username, uniqueness: true
     validates :password, length: {minimum: 7}
+
+    def self.count_users
+        self.all.count
+    end
+
+    def self.user_listed_records #fix
+        self.all.select {|u| u.records}
+    end
 end

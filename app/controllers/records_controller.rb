@@ -14,10 +14,8 @@ class RecordsController < ApplicationController
 
     def create
         @record = Record.create(record_params)
-        byebug
         if @record.valid?
-            UserRecord.create(user_id: params[:user_ids], record_id: @record.id)
-
+            UserRecord.create(user_id: params[:record][:user_id], record_id: @record.id)
             redirect_to @record
         else
             flash[:errors] = @record.errors.full_messages
@@ -43,7 +41,7 @@ class RecordsController < ApplicationController
 
     def add_to_cart
         @record = Record.find(params[:id])
-        current_cart << @record.title
+        current_cart << @record
         redirect_to current_cart_path
     end
 
@@ -62,6 +60,14 @@ class RecordsController < ApplicationController
 
     def shop_records
         all_records
+    end
+
+    def checkout
+
+    end
+
+    def cart_total
+        @current_cart.map {|c| c.price}.sum
     end
 
     private
