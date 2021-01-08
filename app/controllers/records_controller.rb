@@ -47,6 +47,7 @@ class RecordsController < ApplicationController
     end
 
     def current_cart
+        @total = 0
         session[:cart] ||= []
     end
 
@@ -64,12 +65,23 @@ class RecordsController < ApplicationController
     end
 
     def checkout
-
+        @records = current_cart
+        @real_records = []
+        @records.each do |r|
+            @real_record = Record.find_by(r['id'].to_s)
+            @real_record.users = User.find_by(params['id'])
+            @real_records << @real_record
+        end
     end
 
-    def cart_total
-        @current_cart.map {|c| c.price}.sum
+    def user_buy_record
+        @record = Record.find(params[:id])
+        @record.users = User.find(session[:user_id])
     end
+
+    # def cart_total
+    #     @current_cart.map {|c| c.price}.sum
+    # end
 
     def record_high_price
         @user = User.find(params[:id])
