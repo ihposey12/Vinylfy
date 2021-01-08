@@ -65,13 +65,17 @@ class RecordsController < ApplicationController
     end
 
     def checkout
+        @user = User.find(session[:user_id])
         @records = current_cart
         @real_records = []
         @records.each do |r|
-            @real_record = Record.find_by(r['id'].to_s)
-            @real_record.users = User.find_by(params['id'])
-            @real_records << @real_record
+            @real_record = Record.find(r['id'].to_s)
+            #@real_record.users.records.find(r['id'])
+            @user.records << @real_record
+            #@real_record.users = User.find_by(params['id'])
+            #@real_records << @real_record
         end
+        session[:cart] = []
     end
 
     def user_buy_record

@@ -18,7 +18,6 @@ class ApplicationController < ActionController::Base
     private
     
     def log_in_user(user_id)
-        byebug
         session[:user_id] = user_id
     end
 
@@ -32,6 +31,7 @@ class ApplicationController < ActionController::Base
 
     def log_out_user
         session.delete(:user_id)
+        session.delete(:cart)
         flash[:errors] = ['You Have Been Logged Out']
         redirect_to new_log_in_path
     end
