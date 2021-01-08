@@ -19,21 +19,41 @@
         <% end %>
       <% end %>
 
-      <u><h1><strong>Vinyl·Fi</strong></h1></u>
-
+      <nav class="navbar justify-align-center navbar-light bg-white">
+   <a class="navbar-brand" href="#"><h1><strong><u>Vinyl·Fi®</u></strong></h1></a>
+   <a class="navbar-brand" href="#">
+    <img src="https://cdn.discordapp.com/attachments/795837119993085976/797034310522896384/IMG_3380.PNG" width="85" height="85" alt="">
+  </a>
+   <u><ul class="navbar-nav justify-content-center">
       <% if @user %>
-        <%= link_to 'Main', @user %><strong> ·</strong>
+        <li class="nav-item"><%= link_to 'Main', @user, class: "nav-link" %></li>
       <% else %>
-        <%= link_to 'Main', new_log_in_path %><strong> ·</strong>
+        <li class="nav-item"><%= link_to 'Main', new_log_in_path, class: "nav-link" %></li>
       <% end %>
-      <% if @user %>
-        <%= link_to 'Cart', @current_cart %>
-      <% end %>
+      <li class="nav-item"><%= link_to 'Shop', static_show_path, class: "nav-link" %></li>
+      <li class="nav-item"><%= link_to 'Reviews', reviews_path, class: "nav-link" %></li>
+      <li class="nav-item"><%= link_to 'About Us', root_path, class: "nav-link" %></li>
+      </ul></u>
+      </nav>
 
-      <%= link_to 'Shop', static_show_path %><strong> ·</strong>
-      <%= link_to 'Reviews', reviews_path %><strong> ·</strong>
-      <%= link_to 'About', root_path %> <strong> ·</strong>
+      <div
+    class="p-5 text-center bg-image"
+    style="
+      background-image: url('https://images.unsplash.com/photo-1514846160150-2cfb150b48ea?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=339&q=80');
+      height: 400px;
+    "
+  >
+    <div class="mask" style="background-color: rgba(0, 0, 0, 0.0)">
+      <div class="d-flex justify-content-center align-items-center h-100">
+        <div class="text-white">
+          <br><br><br><br><br><h2 class="mb-3">"When you get confused, just listen to the music play..."</h2>
+          <h4><em>-The  Grateful Dead, Franklins Tower, 1975</em></h4>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <br>
   <br>
   <br>
   <br>

@@ -1,14 +1,13 @@
-<%= link_to 'Genre', genres_path %>
-<%= link_to 'Price:High', static_high_price_path %>
-<%= link_to 'Price:Low', static_low_price_path %>
-<%= link_to 'Title:A-Z', static_a_to_z_path %>
-<%= link_to 'Title:Z-A', static_z_to_a_path%>
-<%= link_to 'Sort:Release Date - Old', static_sort_date_path %>
-<%= link_to 'Sort:Release Date - New', static_sort_date_new_path %>
-
+<em><%= link_to 'Genre', genres_path %></em> |
+<em><%= link_to 'Price:High', static_high_price_path %></em> |
+<em><%= link_to 'Price:Low', static_low_price_path %></em> |
+<em><%= link_to 'Title:A-Z', static_a_to_z_path %></em> |
+<em><%= link_to 'Title:Z-A', static_z_to_a_path%></em> |
+<em><%= link_to 'Sort:Release Date - Old', static_sort_date_path %></em> |
+<em><%= link_to 'Sort:Release Date - New', static_sort_date_new_path %></em> |
 <ol>
     <% Record.all.map do |r| %>
-        <li>
+        <br><br><li>
             <h4><%= link_to r.title, r %><br></h3>
             <em>Band/Artist: </em><strong><%= r.band %></strong><br>
             <em>Release Date: </em><strong><%= r.release_date %></strong><br>

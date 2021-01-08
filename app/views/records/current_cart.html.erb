@@ -1,12 +1,12 @@
-<h3><strong>Cart</strong></h3><br>
+<h3><strong>Your Cart:</strong></h3><br>
 
 <ul>
     <% current_cart.each do |c| %>
         <% @total += c['price'] %>
-        <li><h5><%= link_to c['title'], record_path %>  $<%= c['price'].round %></h5></li><br>
+        <li><h5><%= link_to c['title'], record_path %> - $<%= c['price'].round %></h5></li><br>
     <% end %>    
-</ul>
-Total: <strong>$<u><%= @total.round %></u></strong>
+</ul><br>
+Total: <strong>$<u><%= @total.round %><br><br><br></u></strong>
 
 <%= button_to 'Checkout', action: 'checkout', method: 'patch' %><br><br>
 

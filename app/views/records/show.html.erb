@@ -1,26 +1,26 @@
 <h2>
     <u><%= @record.title %></u>
-</h2>
+</h2><br>
 
-<h5>
+<h6>
     <em><u>Artist:</u> </em><strong><%= @record.band %><strong>
-</h5>
+</h6>
 
-<h5>
-    <em><u>Release Year:</u> </em><strong><%= @record.release_date %></strong>
-</h5><br>
+<h6>
+    <em><u>Release Year</u>: </em><strong><%= @record.release_date %></strong>
+</h6><br><br>
 
 <p>
     <%= @record.description %>
-</p><br>
+</p><br><br>
 
 <h4>
     <em><u>Price:</u> </em><strong>$<%= @record.price.round %></strong>
-</h4><br>
+</h4><br><br>
 
 <%= button_to 'Add to Cart', action: 'add_to_cart', method: 'patch' %><br><br>
 
 <h6><em>Already <strong>Purchased</strong> or <strong>Own</strong> this record? Leave a <strong>Review!<strong></em></h6>
-<%= button_to 'Write Review', new_review_path, method: 'get', params: {record_id: @record.id} %><br>
+<%= button_to 'Write Review', new_review_path, method: 'get', params: {record_id: @record.id} %><br><br><br><br>
 <%#= button_to 'Purchase', switch_users_path, method: 'patch' %>
 <%#= button_to 'Request Trade', action: '/request_trade', method: 'patch' %>

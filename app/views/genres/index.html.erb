@@ -1,3 +1,7 @@
-<% @genres.each do |g| %>
-    <%= link_to g.name, g %>
-<% end %>
+<h2>Sort By Genre: </h2> <%= link_to 'Back', :back %><br><br>
+
+<br><ul>
+    <h5><% @genres.each do |g| %>
+        <li><%= link_to g.name, g %></li><br><br>
+    <% end %></h5>
+</ul>

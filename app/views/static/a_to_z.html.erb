@@ -1,3 +1,4 @@
+<%= link_to 'Back', :back %><br><br>
 <ol>    
     <% Record.all.sort_by {|r| r.title.upcase}.each do |r| %>
         <li>

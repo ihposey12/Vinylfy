@@ -1,6 +1,5 @@
-<h2>
-    <%= @review.title %><br>
-    <%= @review.description %><br>
-    <%= @review.rating %><br>
-    User: <%= @review.user.username %>
-</h2>
+
+    <h6>Title: </h6><h3><strong><%= @review.title %><br><br></strong></h3>
+    <h6>Review: </h6><h4><strong><%= @review.description %></strong></h4><br><br>
+    <h6>Rating: </h6><h6><strong><%= @review.rating %></strong></h6><br><br><br>
+    <h6>User: </h6><h5><strong><%= @review.user.username %></strong></h5><br><br>

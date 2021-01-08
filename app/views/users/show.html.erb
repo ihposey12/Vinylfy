@@ -1,6 +1,6 @@
-<h3>
+<h2>
     Welcome, <%= @user.name %>!
-</h3>
+</h2>
 
 <h5>
     Username: <%= @user.username %>
@@ -12,13 +12,14 @@
             <h5><%= 'Dang! No records listed...yet!' %></h5>
         <% else %>
             <% @records.each do |r| %>
-                <li><%= link_to r.title, r %></li><br>
+                <li><%= link_to r.title, r %></li>
             <% end %>
         <% end %>
     </ul>
 <br>
 <br>
     <h3>List a Record <%= link_to 'Here!', new_record_path %></h3>
+<br>
 <br>
 <br>
 <h3>
