@@ -1,5 +1,7 @@
-<h2>
+<h1><%= @genre.name %></h1>
+    
+<ul>
     <% @records.each do |r| %>
-        <%= link_to r.title, r %>
+        <li><%= link_to r.title, r %></li>
     <% end %>
-</h2>
+</ul>

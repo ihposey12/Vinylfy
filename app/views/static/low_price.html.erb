@@ -1,0 +1,11 @@
+<ol>    
+    <% Record.all.sort_by {|r| r.price}.each do |r| %>
+        <li>
+            <h4><%= link_to r.title, r %><br></h3>
+            <em>Band/Artist: </em><strong><%= r.band %></strong><br>
+            <em>Release Date: </em><strong><%= r.release_date %></strong><br>
+            <em>Price: </em><strong>$<%= r.price.round %>.00</strong><br>
+            <em>Genre: </em><strong><%= r.genre.name %></strong><br>
+        </li><br>
+    <% end %>
+</ol>

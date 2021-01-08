@@ -5,6 +5,7 @@ class RecordsController < ApplicationController
 
     def show
         @record = Record.find(params[:id])
+        @genre = Genre.all
     end
 
     def new
@@ -68,6 +69,11 @@ class RecordsController < ApplicationController
 
     def cart_total
         @current_cart.map {|c| c.price}.sum
+    end
+
+    def record_high_price
+        @user = User.find(params[:id])
+        self.record_high_price
     end
 
     private

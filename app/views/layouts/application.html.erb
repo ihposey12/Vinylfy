@@ -23,10 +23,13 @@
 
       <% if @user %>
         <%= link_to 'Main', @user %><strong> ·</strong>
-        <%#= link_to 'Cart', current_cart_path(@user) %><strong> ·</strong>
       <% else %>
         <%= link_to 'Main', new_log_in_path %><strong> ·</strong>
       <% end %>
+      <% if @user %>
+        <%= link_to 'Cart', @current_cart %>
+      <% end %>
+
       <%= link_to 'Shop', static_show_path %><strong> ·</strong>
       <%= link_to 'Reviews', reviews_path %><strong> ·</strong>
       <%= link_to 'About', root_path %> <strong> ·</strong>
@@ -40,9 +43,9 @@
   <br>
     <% if @logged_in %>
       <%= button_to 'Log out', log_out_path, :method => :delete %>
-      <% else %>
-        <%= link_to 'Log in', new_log_in_path %>
-        Dont have an Account? <%= link_to 'Sign up', new_user_path %>!
+    <% else %>
+      <%= link_to 'Log in', new_log_in_path %>
+      Dont have an Account? <%= link_to 'Sign up', new_user_path %>!
     <% end %>
 
   </body>
