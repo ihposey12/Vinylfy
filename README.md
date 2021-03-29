@@ -25,7 +25,8 @@ Before you begin, please ensure you have met the following requirements:
 
 **REQUIRES SIGNUP**
 
-# Explore and Enjoy!
+# DEMO
+https://youtu.be/OCrYugx0wSg
 
 # Contributors
 @jeremy-rodrguez
